@@ -7,6 +7,7 @@ import { Dashboard } from './pages/dashboard';
 import { Login } from './pages/login';
 import { OpportunityDetail } from './pages/opportunity-detail';
 import { Register } from './pages/register';
+import { EmployerDashboard } from './pages/employer-dashboard';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'opportunities' },
@@ -16,7 +17,7 @@ export const routes: Routes = [
   { path: 'opportunities/:id', component: OpportunityDetail },
   { path: 'applicant', component: ApplicantHome, canActivate: [roleGuard('applicant')] },
   { path: 'applicant/profile', component: ApplicantProfile, canActivate: [roleGuard('applicant')] },
-  { path: 'employer', component: Dashboard, canActivate: [roleGuard('employer')] },
+  { path: 'employer', component: EmployerDashboard, canActivate: [roleGuard('employer')] },
   { path: 'admin', component: Dashboard, canActivate: [roleGuard('admin')] },
   { path: '**', redirectTo: 'opportunities' },
 ];
